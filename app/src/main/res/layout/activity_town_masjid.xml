@@ -8,7 +8,7 @@
     android:paddingRight="1sp"
     android:paddingTop="1sp"
     android:weightSum="6"
-    tools:context=".TownMasjid" >
+    tools:context=".MainActivity" >
 
     <TableLayout
         android:id="@+id/t1"
