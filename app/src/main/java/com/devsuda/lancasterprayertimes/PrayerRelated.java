@@ -8,7 +8,7 @@ import java.util.Date;
 
 public class PrayerRelated {
 
-    public static long prayerTimeInMs(Cursor c, int prayerID, String nextDay) {
+    public static long timeInMillis(Cursor c, int prayerID, String nextDay) {
 
         DateTimeAdaptor dateTimeAdaptor = new DateTimeAdaptor();
 

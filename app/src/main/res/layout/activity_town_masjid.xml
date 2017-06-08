@@ -42,7 +42,7 @@
             android:gravity="center" >
 
             <TextView
-                android:id="@+id/dateName"
+                android:id="@+id/dateNameTV"
                 android:gravity="center"
                 android:textColor="#ecf0f1"
                 android:textSize="20sp"
@@ -57,7 +57,7 @@
             android:gravity="center" >
 
             <TextView
-                android:id="@+id/gregorianTime"
+                android:id="@+id/gregorianTimeTV"
                 android:gravity="center"
                 android:textColor="#ecf0f1"
                 android:textSize="20sp"
@@ -371,7 +371,7 @@
         </TextView>
 
         <TableLayout
-            android:id="@+id/fajrBG"
+            android:id="@+id/fajrBgTL"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_weight="0.5"
@@ -408,7 +408,7 @@
                         android:gravity="center" >
 
                         <TextView
-                            android:id="@+id/shehriLbl"
+                            android:id="@+id/shehriLblTV"
                             android:gravity="right"
                             android:textColor="#2c3e50"
                             android:textSize="18dp"
@@ -427,7 +427,7 @@
                 </TableLayout>
 
                 <TextView
-                    android:id="@+id/fajrAzan"
+                    android:id="@+id/fajrAzanTV"
                     android:layout_width="0sp"
                     android:layout_weight="25"
                     android:gravity="center"
@@ -449,7 +449,7 @@
                         android:gravity="center" >
 
                         <TextView
-                            android:id="@+id/fajrIgama"
+                            android:id="@+id/fajrIgamaTV"
                             android:gravity="center"
                             android:textColor="#2c3e50"
                             android:textSize="20sp"
@@ -464,7 +464,7 @@
                         android:gravity="center" >
 
                         <TextView
-                            android:id="@+id/sunrise"
+                            android:id="@+id/sunriseTV"
                             android:gravity="right"
                             android:textColor="#2c3e50"
                             android:textSize="18sp"
@@ -492,7 +492,7 @@
         </TextView>
 
         <TableLayout
-            android:id="@+id/zhorBG"
+            android:id="@+id/zhorBgTL"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -516,7 +516,7 @@
                     android:typeface="serif" />
 
                 <TextView
-                    android:id="@+id/zhorAzan"
+                    android:id="@+id/zhorAzanTV"
                     android:layout_width="0sp"
                     android:layout_weight="25"
                     android:gravity="center"
@@ -525,7 +525,7 @@
                     android:textStyle="italic" />
 
                 <TextView
-                    android:id="@+id/zhorIgama"
+                    android:id="@+id/zhorIgamaTV"
                     android:layout_width="0sp"
                     android:layout_weight="25"
                     android:gravity="center"
@@ -544,7 +544,7 @@
         </TextView>
 
         <TableLayout
-            android:id="@+id/asorBG"
+            android:id="@+id/asorBgTL"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -568,7 +568,7 @@
                     android:typeface="serif" />
 
                 <TextView
-                    android:id="@+id/asorAzanHanafi"
+                    android:id="@+id/asorAzanHanafiTV"
                     android:layout_weight="25"
                     android:gravity="center"
                     android:textColor="#2c3e50"
@@ -576,7 +576,7 @@
                     android:textStyle="italic" />
 
                 <TextView
-                    android:id="@+id/asorIgama"
+                    android:id="@+id/asorIgamaTV"
                     android:layout_width="0sp"
                     android:layout_weight="25"
                     android:gravity="center"
@@ -595,7 +595,7 @@
         </TextView>
 
         <TableLayout
-            android:id="@+id/magribBG"
+            android:id="@+id/magribBgTL"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -628,7 +628,7 @@
                     android:textStyle="italic" />
 
                 <TextView
-                    android:id="@+id/magribIgama"
+                    android:id="@+id/magribIgamaTV"
                     android:layout_width="0sp"
                     android:layout_weight="25"
                     android:gravity="center"
@@ -647,7 +647,7 @@
         </TextView>
 
         <TableLayout
-            android:id="@+id/ishaBG"
+            android:id="@+id/ishaBgTL"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -671,7 +671,7 @@
                     android:typeface="serif" />
 
                 <TextView
-                    android:id="@+id/ishaAzan"
+                    android:id="@+id/ishaAzanTV"
                     android:layout_width="0sp"
                     android:layout_weight="25"
                     android:gravity="center"
@@ -680,7 +680,7 @@
                     android:textStyle="italic" />
 
                 <TextView
-                    android:id="@+id/ishaIgama"
+                    android:id="@+id/ishaIgamaTV"
                     android:layout_width="0sp"
                     android:layout_weight="25"
                     android:gravity="center"

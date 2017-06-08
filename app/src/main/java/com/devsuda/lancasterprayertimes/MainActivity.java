@@ -17,7 +17,6 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_town_masjid);
 
         databaseAdaptor = new DatabaseAdaptor(this);
-
         databaseAdaptor.prepareDatabase();
     }
 
@@ -25,7 +24,6 @@ public class MainActivity extends Activity {
     public void onResume() {
         super.onResume();
         setContentView(R.layout.activity_town_masjid);
-
         databaseAdaptor.prepareDatabase();
     }
 

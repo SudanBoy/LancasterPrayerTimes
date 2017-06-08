@@ -38,11 +38,12 @@ public class DatabaseAdaptor extends SQLiteOpenHelper {
     private static String databasePath;
     private static int dayOfMonth;
 
-    private Cursor dbQuery;
+    private Cursor dbCursor;
     private SQLiteDatabase database;
 
-    private GuiInterface guiIntf;
+    private CountdownsTimer countdownsTimer;
     private DateTimeAdaptor dateTimeAdaptor;
+    private testABS testABS;
 
     public DatabaseAdaptor(MainActivity _mainActivity) {
         super(_mainActivity, DATABASE_NAME, null, DATABASE_VERSION);
@@ -50,8 +51,10 @@ public class DatabaseAdaptor extends SQLiteOpenHelper {
         databasePath = context.getFilesDir().getParentFile().getPath()
                 + "/databases/";
 
-        dateTimeAdaptor = new DateTimeAdaptor();
-        guiIntf = new GuiInterface(_mainActivity);
+        this.dateTimeAdaptor = new DateTimeAdaptor();
+        this.countdownsTimer = new CountdownsTimer(_mainActivity);
+        this.testABS = new testABS(_mainActivity);
+
     }
 
     public void prepareDatabase() {
@@ -59,10 +62,10 @@ public class DatabaseAdaptor extends SQLiteOpenHelper {
         openDb(this);
 
         dayOfMonth = Calendar.getInstance().get(Calendar.DAY_OF_MONTH);
-        dbQuery = this.getPrayersTimeOnDay(dayOfMonth);
-        guiIntf.get_time_diff(dbQuery, this);
+        dbCursor = this.getPrayersTimeOnDay(dayOfMonth);
+        testABS.get_time_diff(dbCursor, this);
 
-        dbQuery.close();
+        dbCursor.close();
         this.close();
     }
 
@@ -82,7 +85,6 @@ public class DatabaseAdaptor extends SQLiteOpenHelper {
             throw sqle;
         }
     }
-
 
     /**
      * Creates a empty database on the system and rewrites it with your own

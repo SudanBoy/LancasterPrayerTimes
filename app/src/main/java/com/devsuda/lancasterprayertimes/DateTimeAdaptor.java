@@ -79,7 +79,7 @@ public class DateTimeAdaptor {
         return dateFormat;
     }
 
-    public DateFormat dateformat_3() {
+    public DateFormat gregorianDateFormat() {
         DateFormat dateFormat = new SimpleDateFormat("dd MMM yyyy");
         return dateFormat;
     }
