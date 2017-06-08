@@ -10,20 +10,23 @@ public class MainActivity extends Activity {
 
     private ExtAppsCaller extAppsIntf;
     private DatabaseAdaptor databaseAdaptor;
+    private DisplayPrayerTimes displayPrayerTimes;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_town_masjid);
+        setContentView(R.layout.activity_main);
 
         databaseAdaptor = new DatabaseAdaptor(this);
         databaseAdaptor.prepareDatabase();
+
+        displayPrayerTimes = new DisplayPrayerTimes(this);
     }
 
     @Override
     public void onResume() {
         super.onResume();
-        setContentView(R.layout.activity_town_masjid);
+        setContentView(R.layout.activity_main);
         databaseAdaptor.prepareDatabase();
     }
 

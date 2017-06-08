@@ -41,9 +41,9 @@ public class DatabaseAdaptor extends SQLiteOpenHelper {
     private Cursor dbCursor;
     private SQLiteDatabase database;
 
-    private CountdownsTimer countdownsTimer;
+    private DisplayCountdowns displayCountdowns;
     private DateTimeAdaptor dateTimeAdaptor;
-    private testABS testABS;
+    private DisplayPrayerTimes DisplayPrayerTimes;
 
     public DatabaseAdaptor(MainActivity _mainActivity) {
         super(_mainActivity, DATABASE_NAME, null, DATABASE_VERSION);
@@ -52,8 +52,8 @@ public class DatabaseAdaptor extends SQLiteOpenHelper {
                 + "/databases/";
 
         this.dateTimeAdaptor = new DateTimeAdaptor();
-        this.countdownsTimer = new CountdownsTimer(_mainActivity);
-        this.testABS = new testABS(_mainActivity);
+        this.displayCountdowns = new DisplayCountdowns(_mainActivity);
+        this.DisplayPrayerTimes = new DisplayPrayerTimes(_mainActivity);
 
     }
 
@@ -63,7 +63,7 @@ public class DatabaseAdaptor extends SQLiteOpenHelper {
 
         dayOfMonth = Calendar.getInstance().get(Calendar.DAY_OF_MONTH);
         dbCursor = this.getPrayersTimeOnDay(dayOfMonth);
-        testABS.get_time_diff(dbCursor, this);
+        DisplayPrayerTimes.get_time_diff(dbCursor, this);
 
         dbCursor.close();
         this.close();

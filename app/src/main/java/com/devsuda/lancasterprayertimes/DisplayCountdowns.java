@@ -4,14 +4,14 @@ import android.graphics.Color;
 import android.os.CountDownTimer;
 import android.widget.TextView;
 
-public class CountdownsTimer {
+public class DisplayCountdowns {
 
     public MainActivity mainActivity;
     private static final int igamaCountDownId = 1;
     private static final int azanCountDownId = 2;
     private static final int maghribCountDownId = 3;
 
-    public CountdownsTimer(MainActivity _mainActivity) {
+    public DisplayCountdowns(MainActivity _mainActivity) {
         this.mainActivity = _mainActivity;
     }
 
