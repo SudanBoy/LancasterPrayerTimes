@@ -43,7 +43,7 @@ public class DatabaseAdaptor extends SQLiteOpenHelper {
 
     private DisplayCountdowns displayCountdowns;
     private DateTimeAdaptor dateTimeAdaptor;
-    private DisplayPrayerTimes DisplayPrayerTimes;
+    private DisplayPrayerTimes displayPrayerTimes;
 
     public DatabaseAdaptor(MainActivity _mainActivity) {
         super(_mainActivity, DATABASE_NAME, null, DATABASE_VERSION);
@@ -53,8 +53,7 @@ public class DatabaseAdaptor extends SQLiteOpenHelper {
 
         this.dateTimeAdaptor = new DateTimeAdaptor();
         this.displayCountdowns = new DisplayCountdowns(_mainActivity);
-        this.DisplayPrayerTimes = new DisplayPrayerTimes(_mainActivity);
-
+        this.displayPrayerTimes = new DisplayPrayerTimes(_mainActivity);
     }
 
     public void prepareDatabase() {
@@ -63,7 +62,7 @@ public class DatabaseAdaptor extends SQLiteOpenHelper {
 
         dayOfMonth = Calendar.getInstance().get(Calendar.DAY_OF_MONTH);
         dbCursor = this.getPrayersTimeOnDay(dayOfMonth);
-        DisplayPrayerTimes.get_time_diff(dbCursor, this);
+        displayPrayerTimes.get_time_diff(dbCursor, this);
 
         dbCursor.close();
         this.close();

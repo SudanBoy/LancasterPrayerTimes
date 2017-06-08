@@ -20,14 +20,11 @@ public class DisplayPrayerTimes {
     private static final int maghribCountDownId = 3;
     private MainActivity mainActivity;
 
-    private long fajr_in_ms;
-    private long zhor_in_ms;
-    private long asor_in_ms;
-    private long magrib_in_ms;
-    private long isha_in_ms;
-
-    private long nextPrayerTimeInMs = 0;
-    private long nextPrayerAzanTimeInMs = 0;
+    private long fajrIgama_in_ms;
+    private long zhorIgama_in_ms;
+    private long asorIgama_in_ms;
+    private long magribIgama_in_ms;
+    private long ishaIgama_in_ms;
 
     private long currentTimeInMillis;
     private long timeToNextIgamaInMillis;
@@ -38,11 +35,11 @@ public class DisplayPrayerTimes {
     private long asorAzan_in_ms;
     private long ishaAzan_in_ms;
 
-    private Date fajr_time;
-    private Date zhor_time;
-    private Date asor_time;
-    private Date magrib_time;
-    private Date isha_time;
+    private Date fajrIgama_time;
+    private Date zhorIgama_time;
+    private Date asorIgama_time;
+    private Date magribIgama_time;
+    private Date ishaIgama_time;
 
     private Date fajrAzan_time;
     private Date zhorAzan_time;
@@ -60,31 +57,36 @@ public class DisplayPrayerTimes {
     private DateTimeAdaptor dateTimeAdaptor;
     private DisplayCountdowns displayCountdowns;
 
-    private static TextView DuaaLabel;
+    private TextView DuaaLabel;
 
-    private static TextView dateNameTV;
-    private static TextView gregorianTimeTV;
+    private TextView dateNameTV;
+    private TextView gregorianTimeTV;
 
-    private static TextView shehriLblTV;
-    private static TextView fajrAzanTV;
-    private static TextView fajrIgamaTV;
-    private static TextView sunriseTV;
-    private static TableLayout fajrBgTl;
+    private TextView shehriLblTV;
+    private TextView fajrAzanTV;
+    private TextView fajrIgamaTV;
+    private TextView sunriseTV;
+    private TableLayout fajrBgTl;
 
-    private static TextView zhorAzanTV;
-    private static TextView zhorIgamaTV;
-    private static TableLayout zhorBgTL;
+    private TextView zhorAzanTV;
+    private TextView zhorIgamaTV;
+    private TableLayout zhorBgTL;
 
-    private static TextView asorAzanHanafiTV;
-    private static TextView asorIgamaTV;
-    private static TableLayout asorBgTL;
+    private TextView asorAzanHanafiTV;
+    private TextView asorIgamaTV;
+    private TableLayout asorBgTL;
 
-    private static TextView magribIgamaTV;
-    private static TableLayout magribBgTL;
+    private TextView magribIgamaTV;
+    private TableLayout magribBgTL;
 
-    private static TextView ishaAzanTV;
-    private static TextView ishaIgamaTV;
-    private static TableLayout ishaBgTL;
+    private TextView ishaAzanTV;
+    private TextView ishaIgamaTV;
+    private TableLayout ishaBgTL;
+
+    private long nextPrayerIgamaTimeInMs = 0;
+    private long nextPrayerAzanTimeInMs = 0;
+
+    private static final String highlghtColor = "#f1c40f";
 
     public DisplayPrayerTimes(MainActivity _mainActivity) {
         this.mainActivity = _mainActivity;
@@ -95,198 +97,68 @@ public class DisplayPrayerTimes {
         this.calendar_1 = Calendar.getInstance();
         this.calendar_2 = Calendar.getInstance();
         this.cal1 = Calendar.getInstance();
-
-        this.DuaaLabel = (TextView) _mainActivity.findViewById(R.id.DuaaLabel);
-
-        this.dateNameTV = (TextView) _mainActivity.findViewById(R.id.dateNameTV);
-        this.gregorianTimeTV = (TextView) _mainActivity.findViewById(R.id.gregorianTimeTV);
-
-        this.shehriLblTV = (TextView) _mainActivity.findViewById(R.id.shehriLblTV);
-        this.fajrAzanTV = (TextView) _mainActivity.findViewById(R.id.fajrAzanTV);
-        this.fajrIgamaTV = (TextView) _mainActivity.findViewById(R.id.fajrIgamaTV);
-        this.sunriseTV = (TextView) _mainActivity.findViewById(R.id.sunriseTV);
-        this.fajrBgTl = (TableLayout) _mainActivity.findViewById(R.id.fajrBgTL);
-
-        this.zhorAzanTV = (TextView) _mainActivity.findViewById(R.id.zhorAzanTV);
-        this.zhorIgamaTV = (TextView) _mainActivity.findViewById(R.id.zhorIgamaTV);
-        this.zhorBgTL = (TableLayout) _mainActivity.findViewById(R.id.zhorBgTL);
-
-        this.asorAzanHanafiTV = (TextView) _mainActivity.findViewById(R.id.asorAzanHanafiTV);
-        this.asorIgamaTV = (TextView) _mainActivity.findViewById(R.id.asorIgamaTV);
-        this.asorBgTL = (TableLayout) _mainActivity.findViewById(R.id.asorBgTL);
-
-        this.magribIgamaTV = (TextView) _mainActivity.findViewById(R.id.magribIgamaTV);
-        this.magribBgTL = (TableLayout) _mainActivity.findViewById(R.id.magribBgTL);
-
-        this.ishaAzanTV = (TextView) _mainActivity.findViewById(R.id.ishaAzanTV);
-        this.ishaIgamaTV = (TextView) _mainActivity.findViewById(R.id.ishaIgamaTV);
-        this.ishaBgTL = (TableLayout) _mainActivity.findViewById(R.id.ishaBgTL);
     }
 
     public void get_time_diff(Cursor cursor, DatabaseAdaptor databaseAdaptor) {
 
-        displayBasicInfo(cursor);
-
-        fajr_in_ms = dateTimeAdaptor.convertToMillis(cursor, 1, null);
-        zhor_in_ms = dateTimeAdaptor.convertToMillis(cursor, 2, null);
-        asor_in_ms = dateTimeAdaptor.convertToMillis(cursor, 3, null);
-        magrib_in_ms = dateTimeAdaptor.convertToMillis(cursor, 4, null);
-        isha_in_ms = dateTimeAdaptor.convertToMillis(cursor, 5, null);
+        fajrIgama_in_ms = dateTimeAdaptor.convertToMillis(cursor, 1, null);
+        zhorIgama_in_ms = dateTimeAdaptor.convertToMillis(cursor, 2, null);
+        asorIgama_in_ms = dateTimeAdaptor.convertToMillis(cursor, 3, null);
+        magribIgama_in_ms = dateTimeAdaptor.convertToMillis(cursor, 4, null);
+        ishaIgama_in_ms = dateTimeAdaptor.convertToMillis(cursor, 5, null);
 
         fajrAzan_in_ms = dateTimeAdaptor.convertToMillis(cursor, 7, null);
         zhorAzan_in_ms = dateTimeAdaptor.convertToMillis(cursor, 8, null);
         asorAzan_in_ms = dateTimeAdaptor.convertToMillis(cursor, 9, null);
         ishaAzan_in_ms = dateTimeAdaptor.convertToMillis(cursor, 10, null);
 
-        fajr_time = new Date(fajr_in_ms);
-        zhor_time = new Date(zhor_in_ms);
-        asor_time = new Date(asor_in_ms);
-        magrib_time = new Date(magrib_in_ms);
-        isha_time = new Date(isha_in_ms);
+        fajrIgama_time = new Date(fajrIgama_in_ms);
+        zhorIgama_time = new Date(zhorIgama_in_ms);
+        asorIgama_time = new Date(asorIgama_in_ms);
+        magribIgama_time = new Date(magribIgama_in_ms);
+        ishaIgama_time = new Date(ishaIgama_in_ms);
 
         fajrAzan_time = new Date(fajrAzan_in_ms);
         zhorAzan_time = new Date(zhorAzan_in_ms);
         asorAzan_time = new Date(asorAzan_in_ms);
         ishaAzan_time = new Date(ishaAzan_in_ms);
 
-        // ====================================================
+        this.DuaaLabel = (TextView) mainActivity.findViewById(R.id.DuaaLabel);
 
-        if (current_time.before(fajrAzan_time)) {
-            nextPrayerAzanTimeInMs = fajrAzan_in_ms;
-        } else if (current_time.before(zhorAzan_time)
-                && current_time.after(fajr_time)) {
-            nextPrayerAzanTimeInMs = zhorAzan_in_ms;
-        } else if (current_time.before(asorAzan_time)
-                && current_time.after(zhor_time)) {
-            nextPrayerAzanTimeInMs = asorAzan_in_ms;
-        } else if (current_time.before(magrib_time)
-                && current_time.after(asor_time)) {
-            nextPrayerAzanTimeInMs = magrib_in_ms;
-        } else if (current_time.before(ishaAzan_time)
-                && current_time.after(magrib_time)) {
-            nextPrayerAzanTimeInMs = ishaAzan_in_ms;
-        } else if (current_time.after(isha_time)) {
-            // initialize the calendar with current day
-            try {
-                calendar_1.setTime(dateTimeAdaptor.dateformat_2().parse(currentDate));
-            } catch (ParseException e) {
-                e.printStackTrace();
-            }
+        this.dateNameTV = (TextView) mainActivity.findViewById(R.id.dateNameTV);
+        this.gregorianTimeTV = (TextView) mainActivity.findViewById(R.id.gregorianTimeTV);
 
-            // go to next day in the calendar
-            calendar_1.add(Calendar.DATE, 1);
+        this.shehriLblTV = (TextView) mainActivity.findViewById(R.id.shehriLblTV);
+        this.fajrAzanTV = (TextView) mainActivity.findViewById(R.id.fajrAzanTV);
+        this.fajrIgamaTV = (TextView) mainActivity.findViewById(R.id.fajrIgamaTV);
+        this.sunriseTV = (TextView) mainActivity.findViewById(R.id.sunriseTV);
+        this.fajrBgTl = (TableLayout) mainActivity.findViewById(R.id.fajrBgTL);
 
-            // Returns the time of this Calendar as a DateTimeAdaptor object.
-            nextDay = dateTimeAdaptor.dateformat_2().format(calendar_1.getTime());
+        this.zhorAzanTV = (TextView) mainActivity.findViewById(R.id.zhorAzanTV);
+        this.zhorIgamaTV = (TextView) mainActivity.findViewById(R.id.zhorIgamaTV);
+        this.zhorBgTL = (TableLayout) mainActivity.findViewById(R.id.zhorBgTL);
 
-            // parse nextDay with format_2 to get the right "date" syntax
-            try {
-                tomorrow_date = dateTimeAdaptor.dateformat_2().parse(nextDay);
-            } catch (ParseException e) {
-                e.printStackTrace();
-            }
+        this.asorAzanHanafiTV = (TextView) mainActivity.findViewById(R.id.asorAzanHanafiTV);
+        this.asorIgamaTV = (TextView) mainActivity.findViewById(R.id.asorIgamaTV);
+        this.asorBgTL = (TableLayout) mainActivity.findViewById(R.id.asorBgTL);
 
-            // set tomorrow's date as toda's date in the calendar
-            calendar_2.setTime(tomorrow_date);
+        this.magribIgamaTV = (TextView) mainActivity.findViewById(R.id.magribIgamaTV);
+        this.magribBgTL = (TableLayout) mainActivity.findViewById(R.id.magribBgTL);
 
-            // Query the database
-            int dayOfMonth = calendar_2.get(Calendar.DAY_OF_MONTH);
-            Cursor a = databaseAdaptor.getPrayersTimeOnDay(dayOfMonth);
+        this.ishaAzanTV = (TextView) mainActivity.findViewById(R.id.ishaAzanTV);
+        this.ishaIgamaTV = (TextView) mainActivity.findViewById(R.id.ishaIgamaTV);
+        this.ishaBgTL = (TableLayout) mainActivity.findViewById(R.id.ishaBgTL);
 
-            fajrAzan_in_ms = dateTimeAdaptor.convertToMillis(a, 7, null);
-            nextPrayerAzanTimeInMs = fajrAzan_in_ms;
-        }
+        displayTodayPrayerTimes(cursor);
+        setNextPrayerAzanTimeInMsForCountdown(cursor, databaseAdaptor);
+        setNextPrayerIgamaTimeInMsForCountdown(cursor, databaseAdaptor);
 
-        // ====================================================
-
-        if (current_time.before(fajr_time)) {
-            nextPrayerTimeInMs = fajr_in_ms;
-            fajrBgTl.setBackgroundColor(Color.parseColor("#f1c40f"));
-        } else if (current_time.before(zhor_time)
-                && current_time.after(fajr_time)) {
-            if (dateTimeAdaptor.isFriday() == true) {
-                zhorBgTL.setBackgroundColor(Color.parseColor("#f1c40f"));
-                nextPrayerTimeInMs = zhor_in_ms;
-            } else {
-                nextPrayerTimeInMs = zhor_in_ms;
-                zhorBgTL.setBackgroundColor(Color.parseColor("#f1c40f"));
-            }
-        } else if (current_time.before(asor_time)
-                && current_time.after(zhor_time)) {
-            nextPrayerTimeInMs = asor_in_ms;
-            asorBgTL.setBackgroundColor(Color.parseColor("#f1c40f"));
-        } else if (current_time.before(magrib_time)
-                && current_time.after(asor_time)) {
-            nextPrayerTimeInMs = magrib_in_ms;
-            magribBgTL.setBackgroundColor(Color.parseColor("#f1c40f"));
-        } else if (current_time.before(isha_time)
-                && current_time.after(magrib_time)) {
-            nextPrayerTimeInMs = isha_in_ms;
-            ishaBgTL.setBackgroundColor(Color.parseColor("#f1c40f"));
-        } else if (current_time.after(isha_time)) {
-
-            // initialize the calendar with current day
-            try {
-                calendar_1.setTime(dateTimeAdaptor.dateformat_2().parse(currentDate));
-            } catch (ParseException e) {
-                e.printStackTrace();
-            }
-
-            // go to next day in the calendar
-            calendar_1.add(Calendar.DATE, 1);
-
-            // Returns the time of this Calendar as a DateTimeAdaptor object.
-            nextDay = dateTimeAdaptor.dateformat_2().format(calendar_1.getTime());
-
-            // parse nextDay with format_2 to get the right "date" syntax
-            try {
-                tomorrow_date = dateTimeAdaptor.dateformat_2().parse(nextDay);
-            } catch (ParseException e) {
-                e.printStackTrace();
-            }
-
-            // set tomorrow's date as toda's date in the calendar
-            calendar_2.setTime(tomorrow_date);
-
-            // Query the database
-            int dayOfMonth = calendar_2.get(Calendar.DAY_OF_MONTH);
-            Cursor b = databaseAdaptor.getPrayersTimeOnDay(dayOfMonth);
-
-            // =======================================
-            DuaaLabel.setText("(All times are NOW set for tomorrow)");
-
-            fajrAzanTV.setText(b.getString(4));
-            fajrIgamaTV.setText(b.getString(5));
-            sunriseTV.setText(b.getString(6));
-
-            zhorAzanTV.setText(b.getString(7));
-            zhorIgamaTV.setText(b.getString(8));
-
-            asorAzanHanafiTV.setText(b.getString(10));
-            asorIgamaTV.setText(b.getString(11));
-
-            magribIgamaTV.setText(b.getString(12));
-
-            ishaAzanTV.setText(b.getString(13));
-            ishaIgamaTV.setText(b.getString(14));
-
-            fajr_in_ms = dateTimeAdaptor.convertToMillis(b, 1, null);
-            asor_in_ms = dateTimeAdaptor.convertToMillis(b, 3, null);
-            magrib_in_ms = dateTimeAdaptor.convertToMillis(b, 4, null);
-
-            asor_time = new Date(asor_in_ms);
-            magrib_time = new Date(magrib_in_ms);
-
-            nextPrayerTimeInMs = fajr_in_ms;
-            fajrBgTl.setBackgroundColor(Color.parseColor("#f1c40f"));
-
-        }
 
         currentTimeInMillis = Calendar.getInstance().getTimeInMillis();
-        timeToNextIgamaInMillis = nextPrayerTimeInMs - currentTimeInMillis;
+        timeToNextIgamaInMillis = nextPrayerIgamaTimeInMs - currentTimeInMillis;
         timeToNextAzanInMillis = nextPrayerAzanTimeInMs - currentTimeInMillis;
 
-        if (current_time.before(magrib_time) && current_time.after(asor_time)) {
+        if (current_time.before(magribIgama_time) && current_time.after(asorIgama_time)) {
             displayCountdowns.countdown(timeToNextIgamaInMillis, igamaCountDownId);
             displayCountdowns.countdown(timeToNextIgamaInMillis, maghribCountDownId);
         } else {
@@ -295,27 +167,135 @@ public class DisplayPrayerTimes {
         }
     }
 
-    private void displayBasicInfo(Cursor cursor) {
+    private void setNextPrayerAzanTimeInMsForCountdown(Cursor cursor, DatabaseAdaptor databaseAdaptor) {
+        if (current_time.before(fajrAzan_time)) {
+            nextPrayerAzanTimeInMs = fajrAzan_in_ms;
+        } else if (current_time.before(zhorAzan_time)
+                && current_time.after(fajrIgama_time)) {
+            nextPrayerAzanTimeInMs = zhorAzan_in_ms;
+        } else if (current_time.before(asorAzan_time)
+                && current_time.after(zhorIgama_time)) {
+            nextPrayerAzanTimeInMs = asorAzan_in_ms;
+        } else if (current_time.before(magribIgama_time)
+                && current_time.after(asorIgama_time)) {
+            nextPrayerAzanTimeInMs = magribIgama_in_ms;
+        } else if (current_time.before(ishaAzan_time)
+                && current_time.after(magribIgama_time)) {
+            nextPrayerAzanTimeInMs = ishaAzan_in_ms;
+        } else if (current_time.after(ishaIgama_time)) {
+            // initialize the calendar with current day
+            try {
+                calendar_1.setTime(dateTimeAdaptor.dateformat_2().parse(currentDate));
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
 
+            // go to next day in the calendar
+            calendar_1.add(Calendar.DATE, 1);
+
+            // Returns the time of this Calendar as a DateTimeAdaptor object.
+            nextDay = dateTimeAdaptor.dateformat_2().format(calendar_1.getTime());
+
+            // parse nextDay with format_2 to get the right "date" syntax
+            try {
+                tomorrow_date = dateTimeAdaptor.dateformat_2().parse(nextDay);
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
+
+            // set tomorrow's date as today's date in the calendar
+            calendar_2.setTime(tomorrow_date);
+
+            // Query the database
+            int dayOfMonth = calendar_2.get(Calendar.DAY_OF_MONTH);
+            cursor = databaseAdaptor.getPrayersTimeOnDay(dayOfMonth);
+
+            fajrAzan_in_ms = dateTimeAdaptor.convertToMillis(cursor, 7, null);
+            nextPrayerAzanTimeInMs = fajrAzan_in_ms;
+        }
+    }
+
+    private void setNextPrayerIgamaTimeInMsForCountdown(Cursor cursor, DatabaseAdaptor databaseAdaptor) {
+        if (current_time.before(fajrIgama_time)) {
+            nextPrayerIgamaTimeInMs = fajrIgama_in_ms;
+            fajrBgTl.setBackgroundColor(Color.parseColor(highlghtColor));
+        } else if (current_time.before(zhorIgama_time)
+                && current_time.after(fajrIgama_time)) {
+            if (dateTimeAdaptor.isFriday() == true) {
+                zhorBgTL.setBackgroundColor(Color.parseColor(highlghtColor));
+                nextPrayerIgamaTimeInMs = zhorIgama_in_ms;
+            } else {
+                nextPrayerIgamaTimeInMs = zhorIgama_in_ms;
+                zhorBgTL.setBackgroundColor(Color.parseColor(highlghtColor));
+            }
+        } else if (current_time.before(asorIgama_time)
+                && current_time.after(zhorIgama_time)) {
+            nextPrayerIgamaTimeInMs = asorIgama_in_ms;
+            asorBgTL.setBackgroundColor(Color.parseColor(highlghtColor));
+        } else if (current_time.before(magribIgama_time)
+                && current_time.after(asorIgama_time)) {
+            nextPrayerIgamaTimeInMs = magribIgama_in_ms;
+            magribBgTL.setBackgroundColor(Color.parseColor(highlghtColor));
+        } else if (current_time.before(ishaIgama_time)
+                && current_time.after(magribIgama_time)) {
+            nextPrayerIgamaTimeInMs = ishaIgama_in_ms;
+            ishaBgTL.setBackgroundColor(Color.parseColor(highlghtColor));
+        } else if (current_time.after(ishaIgama_time)) {
+
+            // initialize the calendar with current day
+            try {
+                calendar_1.setTime(dateTimeAdaptor.dateformat_2().parse(currentDate));
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
+
+            // go to next day in the calendar
+            calendar_1.add(Calendar.DATE, 1);
+
+            // Returns the time of this Calendar as a DateTimeAdaptor object.
+            nextDay = dateTimeAdaptor.dateformat_2().format(calendar_1.getTime());
+
+            // parse nextDay with format_2 to get the right "date" syntax
+            try {
+                tomorrow_date = dateTimeAdaptor.dateformat_2().parse(nextDay);
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
+
+            // set tomorrow's date as toda's date in the calendar
+            calendar_2.setTime(tomorrow_date);
+
+            // Query the database
+            int dayOfMonth = calendar_2.get(Calendar.DAY_OF_MONTH);
+            cursor = databaseAdaptor.getPrayersTimeOnDay(dayOfMonth);
+
+            displayNextDayPrayerTimes(cursor);
+        }
+    }
+
+    private void displayNextDayPrayerTimes(Cursor cursor) {
+        DuaaLabel.setText("(All times are NOW set for tomorrow)");
+        showTimesOnGui(cursor);
+        nextPrayerIgamaTimeInMs = dateTimeAdaptor.convertToMillis(cursor, 1, null);
+        fajrBgTl.setBackgroundColor(Color.parseColor(highlghtColor));
+    }
+
+    private void displayTodayPrayerTimes(Cursor cursor) {
         setDateNameTV(cal1.get(Calendar.DAY_OF_WEEK));
+        gregorianTimeTV.setText(dateTimeAdaptor.gregorianDateFormat().format(new Date()));
+        showTimesOnGui(cursor);
+    }
 
-        dateTimeAdaptor.gregorianDateFormat().format(new Date());
-        this.gregorianTimeTV = (TextView) mainActivity.findViewById(R.id.gregorianTimeTV);
-        gregorianTimeTV.setText("test");
-
+    private void showTimesOnGui(Cursor cursor) {
         shehriLblTV.setText(cursor.getString(3));
         fajrAzanTV.setText(cursor.getString(4));
         fajrIgamaTV.setText(cursor.getString(5));
         sunriseTV.setText(cursor.getString(6));
-
         zhorAzanTV.setText(cursor.getString(7));
         zhorIgamaTV.setText(cursor.getString(8));
-
         asorAzanHanafiTV.setText(cursor.getString(10));
         asorIgamaTV.setText(cursor.getString(11));
-
         magribIgamaTV.setText(cursor.getString(12));
-
         ishaAzanTV.setText(cursor.getString(13));
         ishaIgamaTV.setText(cursor.getString(14));
     }
