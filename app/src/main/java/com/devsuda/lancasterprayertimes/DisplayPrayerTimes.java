@@ -152,8 +152,10 @@ public class DisplayPrayerTimes {
         displayTodayPrayerTimes(cursor);
         setNextPrayerAzanTimeInMsForCountdown(cursor, databaseAdaptor);
         setNextPrayerIgamaTimeInMsForCountdown(cursor, databaseAdaptor);
+        startCountdown();
+    }
 
-
+    private void startCountdown() {
         currentTimeInMillis = Calendar.getInstance().getTimeInMillis();
         timeToNextIgamaInMillis = nextPrayerIgamaTimeInMs - currentTimeInMillis;
         timeToNextAzanInMillis = nextPrayerAzanTimeInMs - currentTimeInMillis;
