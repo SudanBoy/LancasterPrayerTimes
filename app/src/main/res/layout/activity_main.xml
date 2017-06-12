@@ -8,20 +8,20 @@
     android:paddingRight="1sp"
     android:paddingTop="1sp"
     android:weightSum="6"
-    tools:context=".MainActivity" >
+    tools:context=".MainActivity">
 
     <TableLayout
         android:id="@+id/t1"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:gravity="center" >
+        android:gravity="center">
 
         <TableRow
             android:id="@+id/tableRow12"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center" >
+            android:gravity="center">
 
             <TextView
                 android:id="@+id/masjidTitle"
@@ -39,7 +39,7 @@
             android:id="@+id/tableRow1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center" >
+            android:gravity="center">
 
             <TextView
                 android:id="@+id/dateNameTV"
@@ -54,7 +54,7 @@
             android:id="@+id/tableRow23"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center" >
+            android:gravity="center">
 
             <TextView
                 android:id="@+id/gregorianTimeTV"
@@ -73,109 +73,8 @@
         android:layout_weight="1"
         android:background="@drawable/roundcorners2"
         android:gravity="center"
-        android:weightSum="3" >
+        android:weightSum="3">
 
-        <TableRow
-            android:id="@+id/tableRow21"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center" >
-
-            <TextView
-                android:id="@+id/catchUpTimeTitle"
-                android:gravity="center"
-                android:text="Jamaa catch-up time"
-                android:textColor="#2c3e50"
-                android:textSize="18sp"
-                android:textStyle="bold|italic"
-                android:typeface="serif" />
-        </TableRow>
-
-        <TableRow
-            android:id="@+id/tableRow22"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:orientation="horizontal" >
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center" >
-
-                <TextView
-                    android:id="@+id/catchUpTimeH1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:textColor="#e74c3c"
-                    android:textSize="30sp"
-                    android:textStyle="bold|italic"
-                    android:typeface="serif" />
-
-                <TextView
-                    android:id="@+id/catchUpTimeH2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="fill_parent"
-                    android:gravity="top"
-                    android:text=" H\t"
-                    android:textColor="#2c3e50"
-                    android:textSize="10sp"
-                    android:textStyle="italic"
-                    android:typeface="serif" />
-
-                <TextView
-                    android:id="@+id/catchUpTimeM1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:textColor="#e74c3c"
-                    android:textSize="30sp"
-                    android:textStyle="bold|italic"
-                    android:typeface="serif" />
-
-                <TextView
-                    android:id="@+id/catchUpTimeM2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="fill_parent"
-                    android:gravity="top"
-                    android:text=" M\t"
-                    android:textColor="#2c3e50"
-                    android:textSize="10sp"
-                    android:textStyle="italic"
-                    android:typeface="serif" />
-
-                <TextView
-                    android:id="@+id/catchUpTimeS1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:textColor="#e74c3c"
-                    android:textSize="30sp"
-                    android:textStyle="bold|italic"
-                    android:typeface="serif" />
-
-                <TextView
-                    android:id="@+id/catchUpTimeS2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="fill_parent"
-                    android:gravity="top"
-                    android:text=" S"
-                    android:textColor="#2c3e50"
-                    android:textSize="10sp"
-                    android:textStyle="italic"
-                    android:typeface="serif" />
-            </LinearLayout>
-        </TableRow>
-
-        <TextView
-            android:id="@+id/l44"
-            android:layout_width="fill_parent"
-            android:layout_height="1sp"
-            android:background="#ecf0f1" >
-        </TextView>
 
         <TableRow
             android:id="@+id/tableRow25"
@@ -183,103 +82,123 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
-            android:orientation="horizontal" >
+            android:orientation="horizontal">
 
             <LinearLayout
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center_horizontal" >
+                android:gravity="center_horizontal">
+
 
                 <TextView
-                    android:id="@+id/azanCountdown_lbl1"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="right"
-                    android:text=""
-                    android:textColor="#2c3e50"
-                    android:textSize="12dp"
-                    android:textStyle="italic"
-                    android:typeface="serif" >
-                </TextView>
-
-                <TextView
-                    android:id="@+id/azanCountdownH1"
+                    android:id="@+id/minOfAzanCdTv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:textColor="#e74c3c"
-                    android:textSize="12sp"
-                    android:textStyle="bold|italic"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
                     android:typeface="serif" />
 
                 <TextView
-                    android:id="@+id/azanCountdownH2"
+                    android:id="@+id/minOfAzanCdSign"
                     android:layout_width="wrap_content"
                     android:layout_height="fill_parent"
                     android:gravity="top"
-                    android:text=" H\t"
                     android:textColor="#2c3e50"
-                    android:textSize="5sp"
-                    android:textStyle="italic|italic"
+                    android:textSize="16sp"
                     android:typeface="serif" />
 
-                <TextView
-                    android:id="@+id/azanCountdownM1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:textColor="#e74c3c"
-                    android:textSize="12sp"
-                    android:textStyle="bold|italic"
-                    android:typeface="serif" />
-
-                <TextView
-                    android:id="@+id/azanCountdownM2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="fill_parent"
-                    android:gravity="top"
-                    android:text=" M\t"
-                    android:textColor="#2c3e50"
-                    android:textSize="5sp"
-                    android:textStyle="italic|italic"
-                    android:typeface="serif" />
-
-                <TextView
-                    android:id="@+id/azanCountdownS1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:textColor="#e74c3c"
-                    android:textSize="12sp"
-                    android:textStyle="bold|italic"
-                    android:typeface="serif" />
-
-                <TextView
-                    android:id="@+id/azanCountdownS2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="fill_parent"
-                    android:gravity="top"
-                    android:text=" S\t"
-                    android:textColor="#2c3e50"
-                    android:textSize="5sp"
-                    android:textStyle="italic|italic"
-                    android:typeface="serif" />
-
-                <TextView
-                    android:id="@+id/azanCountdown_lbl2"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="left"
-                    android:text=""
-                    android:textColor="#2c3e50"
-                    android:textSize="12dp"
-                    android:textStyle="italic"
-                    android:typeface="serif" >
-                </TextView>
             </LinearLayout>
         </TableRow>
+
+        <TextView
+            android:id="@+id/l44"
+            android:layout_width="fill_parent"
+            android:layout_height="1sp"
+            android:background="#ecf0f1"></TextView>
+
+        <TableRow
+            android:id="@+id/tableRow22"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/asd"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="(time to Igama)"
+                    android:textColor="#2c3e50"
+                    android:textSize="10sp"
+                    android:typeface="serif" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center">
+
+                    <TextView
+                        android:id="@+id/hourOfIgamaCdTv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:textColor="#e74c3c"
+                        android:textSize="30sp"
+                        android:textStyle="bold"
+                        android:typeface="serif" />
+
+                    <TextView
+                        android:id="@+id/hourOfIgamaCdSign"
+                        android:layout_width="wrap_content"
+                        android:layout_height="fill_parent"
+                        android:text=":"
+                        android:textColor="#e74c3c"
+                        android:textSize="30sp"
+                        android:typeface="serif" />
+
+                    <TextView
+                        android:id="@+id/minOfIgamaCdTv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:textColor="#e74c3c"
+                        android:textSize="30sp"
+                        android:textStyle="bold"
+                        android:typeface="serif" />
+
+                    <TextView
+                        android:id="@+id/minOfIgamaCdSign"
+                        android:layout_width="wrap_content"
+                        android:layout_height="fill_parent"
+                        android:text=":"
+                        android:textColor="#e74c3c"
+                        android:textSize="30sp"
+                        android:typeface="serif" />
+
+                    <TextView
+                        android:id="@+id/secOfIgamaCdTv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:textColor="#e74c3c"
+                        android:textSize="30sp"
+                        android:textStyle="bold"
+                        android:typeface="serif" />
+
+                </LinearLayout>
+            </LinearLayout>
+        </TableRow>
+
     </TableLayout>
 
     <TableLayout
@@ -287,13 +206,13 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_weight="0.25"
-        android:gravity="center" >
+        android:gravity="center">
 
         <TableRow
             android:id="@+id/duaaTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center" >
+            android:gravity="center">
 
             <TextView
                 android:id="@+id/DuaaLabel"
@@ -302,8 +221,7 @@
                 android:textColor="#ecf0f1"
                 android:textSize="15sp"
                 android:textStyle="italic"
-                android:typeface="serif" >
-            </TextView>
+                android:typeface="serif"></TextView>
         </TableRow>
     </TableLayout>
 
@@ -314,20 +232,20 @@
         android:layout_weight="3"
         android:background="@drawable/roundcorners3"
         android:gravity="center"
-        android:weightSum="6" >
+        android:weightSum="6">
 
         <TableLayout
             android:id="@+id/namesBG"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_weight="0.5"
-            android:gravity="center" >
+            android:gravity="center">
 
             <TableRow
                 android:id="@+id/tableRow11"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center|top" >
+                android:gravity="center|top">
 
                 <TextView
                     android:id="@+id/prayerTitle"
@@ -345,7 +263,7 @@
                     android:layout_width="0sp"
                     android:layout_weight="25"
                     android:gravity="center"
-                    android:text="Beginning"
+                    android:text="Azan"
                     android:textColor="#2c3e50"
                     android:textSize="12sp"
                     android:textStyle="italic" />
@@ -355,7 +273,7 @@
                     android:layout_width="0sp"
                     android:layout_weight="25"
                     android:gravity="center"
-                    android:text="Jamaa"
+                    android:text="Igama"
                     android:textColor="#2c3e50"
                     android:textSize="12sp"
                     android:textStyle="italic"
@@ -367,21 +285,20 @@
             android:id="@+id/l3"
             android:layout_width="fill_parent"
             android:layout_height="1sp"
-            android:background="#ecf0f1" >
-        </TextView>
+            android:background="#ecf0f1"></TextView>
 
         <TableLayout
             android:id="@+id/fajrBgTL"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_weight="0.5"
-            android:gravity="center" >
+            android:gravity="center">
 
             <TableRow
                 android:id="@+id/tableRow13"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center" >
+                android:gravity="center">
 
                 <TextView
                     android:id="@+id/fajrTitle"
@@ -399,13 +316,13 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="25"
-                    android:gravity="center" >
+                    android:gravity="center">
 
                     <TableRow
                         android:id="@+id/tableRow17"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
-                        android:gravity="center" >
+                        android:gravity="center">
 
                         <TextView
                             android:id="@+id/shehriLblTV"
@@ -440,13 +357,13 @@
                     android:layout_width="0sp"
                     android:layout_height="wrap_content"
                     android:layout_weight="25"
-                    android:gravity="center" >
+                    android:gravity="center">
 
                     <TableRow
                         android:id="@+id/lbl"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
-                        android:gravity="center" >
+                        android:gravity="center">
 
                         <TextView
                             android:id="@+id/fajrIgamaTV"
@@ -461,7 +378,7 @@
                         android:id="@+id/tableRow10"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
-                        android:gravity="center" >
+                        android:gravity="center">
 
                         <TextView
                             android:id="@+id/sunriseTV"
@@ -488,21 +405,20 @@
             android:id="@+id/l3"
             android:layout_width="fill_parent"
             android:layout_height="1sp"
-            android:background="#ecf0f1" >
-        </TextView>
+            android:background="#ecf0f1"></TextView>
 
         <TableLayout
             android:id="@+id/zhorBgTL"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:gravity="center" >
+            android:gravity="center">
 
             <TableRow
                 android:id="@+id/tableRow15"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center" >
+                android:gravity="center">
 
                 <TextView
                     android:id="@+id/zhorTitle"
@@ -540,21 +456,20 @@
             android:id="@+id/l4"
             android:layout_width="fill_parent"
             android:layout_height="1sp"
-            android:background="#ecf0f1" >
-        </TextView>
+            android:background="#ecf0f1"></TextView>
 
         <TableLayout
             android:id="@+id/asorBgTL"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:gravity="center" >
+            android:gravity="center">
 
             <TableRow
                 android:id="@+id/tableRow14"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center" >
+                android:gravity="center">
 
                 <TextView
                     android:id="@+id/asorTitle"
@@ -591,21 +506,20 @@
             android:id="@+id/l5"
             android:layout_width="fill_parent"
             android:layout_height="1sp"
-            android:background="#E6ecf0f1" >
-        </TextView>
+            android:background="#E6ecf0f1"></TextView>
 
         <TableLayout
             android:id="@+id/magribBgTL"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:gravity="center" >
+            android:gravity="center">
 
             <TableRow
                 android:id="@+id/tableRow18"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center" >
+                android:gravity="center">
 
                 <TextView
                     android:id="@+id/magribTitle"
@@ -643,21 +557,20 @@
             android:id="@+id/l6"
             android:layout_width="fill_parent"
             android:layout_height="1sp"
-            android:background="#ecf0f1" >
-        </TextView>
+            android:background="#ecf0f1"></TextView>
 
         <TableLayout
             android:id="@+id/ishaBgTL"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:gravity="center" >
+            android:gravity="center">
 
             <TableRow
                 android:id="@+id/tableRow19"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center" >
+                android:gravity="center">
 
                 <TextView
                     android:id="@+id/ishaTitle"
@@ -695,15 +608,14 @@
             android:id="@+id/l7"
             android:layout_width="fill_parent"
             android:layout_height="1sp"
-            android:background="#E6ecf0f1" >
-        </TextView>
+            android:background="#E6ecf0f1"></TextView>
 
         <TableLayout
             android:id="@+id/t3"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_weight="0.5"
-            android:gravity="center|top" >
+            android:gravity="center|top">
 
             <TextView
                 android:id="@+id/myKeys"
@@ -712,8 +624,7 @@
                 android:textColor="#2c3e50"
                 android:textSize="12sp"
                 android:textStyle="italic"
-                android:typeface="serif" >
-            </TextView>
+                android:typeface="serif"></TextView>
         </TableLayout>
     </TableLayout>
 
@@ -722,13 +633,13 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_weight="0.5"
-        android:gravity="center" >
+        android:gravity="center">
 
         <TableRow
             android:id="@+id/tableRow24"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center" >
+            android:gravity="center">
 
             <Button
                 android:id="@+id/button2"
@@ -749,7 +660,7 @@
         android:layout_height="wrap_content"
         android:layout_weight="0.25"
         android:background="@drawable/roundcorners2"
-        android:gravity="center" >
+        android:gravity="center">
 
         <TextView
             android:id="@+id/myParentDuaa"
@@ -758,8 +669,7 @@
             android:textColor="#2c3e50"
             android:textSize="12sp"
             android:textStyle="italic"
-            android:typeface="serif" >
-        </TextView>
+            android:typeface="serif"></TextView>
     </TableLayout>
 
 </TableLayout>
