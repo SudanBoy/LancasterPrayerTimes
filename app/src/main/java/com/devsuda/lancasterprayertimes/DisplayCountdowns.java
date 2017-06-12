@@ -66,7 +66,7 @@ public class DisplayCountdowns {
                 }
 
                 public void onFinish() {
-                    notiAdaptor.showNotification(azanNotiId);
+                    //notiAdaptor.showNotification(azanNotiId);
                     minOfAzanCdTv.setText("Azan has been called ");
                 }
             }.start();
@@ -112,7 +112,7 @@ public class DisplayCountdowns {
                 }
 
                 public void onFinish() {
-                    notiAdaptor.showNotification(igamaNotiId);
+                    //notiAdaptor.showNotification(igamaNotiId);
                     minOfAzanCdTv.setText("Azan has been called ");
                 }
             }.start();

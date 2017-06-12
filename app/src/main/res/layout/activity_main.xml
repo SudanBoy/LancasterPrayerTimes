@@ -3,6 +3,8 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:background="@drawable/roundcorners"
+    android:gravity="center_vertical"
+    android:layout_gravity="center"
     android:paddingBottom="1sp"
     android:paddingLeft="1sp"
     android:paddingRight="1sp"
@@ -14,9 +16,8 @@
     <TableLayout
         android:id="@+id/t1"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="89dp"
         android:layout_gravity="center_horizontal"
-        android:layout_weight="1"
         android:gravity="center">
 
         <TableRow
@@ -70,6 +71,147 @@
 
     </TableLayout>
 
+
+    <TableLayout
+        android:id="@+id/t2"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@drawable/roundcorners2"
+        android:gravity="center"
+        android:weightSum="3">
+
+
+        <TableRow
+            android:id="@+id/tableRow25"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal">
+
+
+                <TextView
+                    android:id="@+id/minOfAzanCdTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textColor="#e74c3c"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:typeface="serif" />
+
+                <TextView
+                    android:id="@+id/minOfAzanCdSign"
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:gravity="top"
+                    android:textColor="#2c3e50"
+                    android:textSize="16sp"
+                    android:typeface="serif" />
+
+            </LinearLayout>
+        </TableRow>
+
+        <TextView
+            android:id="@+id/l44"
+            android:layout_width="fill_parent"
+            android:layout_height="1sp"
+            android:background="#ecf0f1"></TextView>
+
+        <TableRow
+            android:id="@+id/tableRow22"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/asd"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="(time to Igama)"
+                    android:textColor="#2c3e50"
+                    android:textSize="10sp"
+                    android:typeface="serif" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center">
+
+                    <TextView
+                        android:id="@+id/hourOfIgamaCdTv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:textColor="#e74c3c"
+                        android:textSize="30sp"
+                        android:textStyle="bold"
+                        android:typeface="serif" />
+
+                    <TextView
+                        android:id="@+id/hourOfIgamaCdSign"
+                        android:layout_width="wrap_content"
+                        android:layout_height="fill_parent"
+                        android:text=":"
+                        android:textColor="#e74c3c"
+                        android:textSize="30sp"
+                        android:typeface="serif" />
+
+                    <TextView
+                        android:id="@+id/minOfIgamaCdTv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:textColor="#e74c3c"
+                        android:textSize="30sp"
+                        android:textStyle="bold"
+                        android:typeface="serif" />
+
+                    <TextView
+                        android:id="@+id/minOfIgamaCdSign"
+                        android:layout_width="wrap_content"
+                        android:layout_height="fill_parent"
+                        android:text=":"
+                        android:textColor="#e74c3c"
+                        android:textSize="30sp"
+                        android:typeface="serif" />
+
+                    <TextView
+                        android:id="@+id/secOfIgamaCdTv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:textColor="#e74c3c"
+                        android:textSize="30sp"
+                        android:textStyle="bold"
+                        android:typeface="serif" />
+
+                </LinearLayout>
+            </LinearLayout>
+        </TableRow>
+
+    </TableLayout>
+
+    <TextView
+        android:id="@+id/l44"
+        android:layout_width="fill_parent"
+        android:layout_height="5sp"
+        android:background="#2c3e50"></TextView>
 
     <TableLayout
         android:id="@+id/prayersBG"
@@ -458,28 +600,11 @@
         </TableLayout>
     </TableLayout>
 
-    <TableLayout
-        android:id="@+id/tlTitleBar"
+    <TextView
+        android:id="@+id/l44"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="0.25"
-        android:gravity="center">
-
-        <TableRow
-            android:id="@+id/duaaTitle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center">
-
-            <TextView
-                android:id="@+id/DuaaLabel"
-                android:gravity="center"
-                android:text="Prayer times may change at short notice"
-                android:textColor="#ecf0f1"
-                android:textSize="12sp"
-                android:typeface="serif"></TextView>
-        </TableRow>
-    </TableLayout>
+        android:layout_height="5sp"
+        android:background="#2c3e50"></TextView>
 
     <TableLayout
         android:id="@+id/t2"
@@ -499,32 +624,14 @@
             android:gravity="center"
             android:orientation="horizontal">
 
-            <LinearLayout
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center_horizontal">
+            <TextView
+                android:id="@+id/myParentDuaa"
+                android:gravity="center|top"
+                android:text="Prayer times may change at short notice"
+                android:textColor="#e74c3c"
+                android:textSize="12sp"
+                android:typeface="serif"></TextView>
 
-
-                <TextView
-                    android:id="@+id/minOfAzanCdTv"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:textColor="#e74c3c"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    android:typeface="serif" />
-
-                <TextView
-                    android:id="@+id/minOfAzanCdSign"
-                    android:layout_width="wrap_content"
-                    android:layout_height="fill_parent"
-                    android:gravity="top"
-                    android:textColor="#2c3e50"
-                    android:textSize="16sp"
-                    android:typeface="serif" />
-
-            </LinearLayout>
         </TableRow>
 
         <TextView
@@ -541,124 +648,42 @@
             android:gravity="center"
             android:orientation="horizontal">
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/asd"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:text="(time to Igama)"
-                    android:textColor="#2c3e50"
-                    android:textSize="10sp"
-                    android:typeface="serif" />
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center">
-
-                    <TextView
-                        android:id="@+id/hourOfIgamaCdTv"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:textColor="#e74c3c"
-                        android:textSize="30sp"
-                        android:textStyle="bold"
-                        android:typeface="serif" />
-
-                    <TextView
-                        android:id="@+id/hourOfIgamaCdSign"
-                        android:layout_width="wrap_content"
-                        android:layout_height="fill_parent"
-                        android:text=":"
-                        android:textColor="#e74c3c"
-                        android:textSize="30sp"
-                        android:typeface="serif" />
-
-                    <TextView
-                        android:id="@+id/minOfIgamaCdTv"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:textColor="#e74c3c"
-                        android:textSize="30sp"
-                        android:textStyle="bold"
-                        android:typeface="serif" />
-
-                    <TextView
-                        android:id="@+id/minOfIgamaCdSign"
-                        android:layout_width="wrap_content"
-                        android:layout_height="fill_parent"
-                        android:text=":"
-                        android:textColor="#e74c3c"
-                        android:textSize="30sp"
-                        android:typeface="serif" />
-
-                    <TextView
-                        android:id="@+id/secOfIgamaCdTv"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:textColor="#e74c3c"
-                        android:textSize="30sp"
-                        android:textStyle="bold"
-                        android:typeface="serif" />
-
-                </LinearLayout>
-            </LinearLayout>
+            <TextView
+                android:id="@+id/myParentDuaa"
+                android:gravity="center|top"
+                android:text="Please, make duaa for my parents"
+                android:textColor="#2c3e50"
+                android:textSize="12sp"
+                android:typeface="serif"></TextView>
         </TableRow>
 
     </TableLayout>
 
-
-    <TableLayout
-        android:id="@+id/t23"
+    <TextView
+        android:id="@+id/l44"
         android:layout_width="fill_parent"
+        android:layout_height="5sp"
+        android:background="#2c3e50"></TextView>
+
+    <TableRow
+        android:id="@+id/tableRow24"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="0.5"
         android:gravity="center">
 
-        <TableRow
-            android:id="@+id/tableRow24"
-            android:layout_width="match_parent"
+        <Button
+            android:id="@+id/button2"
+            style="@style/button_text"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:gravity="center">
+            android:layout_margin="10dp"
+            android:background="@drawable/red_button"
+            android:onClick="gotoLancasterMasjidApp"
+            android:text="See prayers times at Lancaster University Prayer Room"
+            android:textSize="12sp" />
+    </TableRow>
 
-            <Button
-                android:id="@+id/button2"
-                style="@style/button_text"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:background="@drawable/red_button"
-                android:onClick="gotoLancasterMasjidApp"
-                android:text="See prayers times at Lancaster University Prayer Room"
-                android:textSize="12sp" />
-        </TableRow>
-    </TableLayout>
-
-
-    <TableLayout
-        android:id="@+id/t3"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="0.25"
-        android:background="@drawable/roundcorners2"
-        android:gravity="center">
-
-        <TextView
-            android:id="@+id/myParentDuaa"
-            android:gravity="center|top"
-            android:text="Please, make duaa for my parents"
-            android:textColor="#e74c3c"
-            android:textSize="12sp"
-            android:typeface="serif"></TextView>
-    </TableLayout>
 
 </TableLayout>
+

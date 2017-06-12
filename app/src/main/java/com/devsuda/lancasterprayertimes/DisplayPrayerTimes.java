@@ -123,7 +123,6 @@ public class DisplayPrayerTimes {
         asorAzan_time = new Date(asorAzan_in_ms);
         ishaAzan_time = new Date(ishaAzan_in_ms);
 
-        this.DuaaLabel = (TextView) mainActivity.findViewById(R.id.DuaaLabel);
 
         this.dateNameTV = (TextView) mainActivity.findViewById(R.id.dateNameTV);
         this.gregorianTimeTV = (TextView) mainActivity.findViewById(R.id.gregorianTimeTV);

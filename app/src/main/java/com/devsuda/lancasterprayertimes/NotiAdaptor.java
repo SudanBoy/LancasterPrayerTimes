@@ -38,9 +38,6 @@ public class NotiAdaptor {
         }
         NotificationManager notificationManager = (NotificationManager) ctx.getSystemService(Context.NOTIFICATION_SERVICE);
 
-        //Context context = ctx.getApplicationContext();
-
-
         Intent myIntent = new Intent(ctx, MainActivity.class);
         PendingIntent pendingIntent = PendingIntent.getActivity(ctx, 0, myIntent, Intent.FILL_IN_ACTION);
         myNotification.flags |= Notification.FLAG_AUTO_CANCEL;
