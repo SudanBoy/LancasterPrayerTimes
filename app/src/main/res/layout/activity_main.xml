@@ -31,7 +31,6 @@
                 android:text="Masjid E-nour"
                 android:textColor="#ecf0f1"
                 android:textSize="20sp"
-                android:textStyle="italic"
                 android:typeface="serif" />
         </TableRow>
 
@@ -46,7 +45,6 @@
                 android:gravity="center"
                 android:textColor="#ecf0f1"
                 android:textSize="20sp"
-                android:textStyle="italic"
                 android:typeface="serif" />
         </TableRow>
 
@@ -61,7 +59,6 @@
                 android:gravity="center"
                 android:textColor="#ecf0f1"
                 android:textSize="20sp"
-                android:textStyle="italic"
                 android:typeface="serif" />
         </TableRow>
     </TableLayout>
@@ -255,7 +252,6 @@
                     android:text="    Prayer"
                     android:textColor="#2c3e50"
                     android:textSize="12sp"
-                    android:textStyle="italic"
                     android:typeface="serif" />
 
                 <TextView
@@ -266,7 +262,7 @@
                     android:text="Azan"
                     android:textColor="#2c3e50"
                     android:textSize="12sp"
-                    android:textStyle="italic" />
+                    android:typeface="serif" />
 
                 <TextView
                     android:id="@+id/igamaTitle"
@@ -276,7 +272,6 @@
                     android:text="Igama"
                     android:textColor="#2c3e50"
                     android:textSize="12sp"
-                    android:textStyle="italic"
                     android:typeface="serif" />
             </TableRow>
         </TableLayout>
@@ -308,7 +303,6 @@
                     android:text="  Fajr"
                     android:textColor="#2c3e50"
                     android:textSize="20sp"
-                    android:textStyle="bold|italic"
                     android:typeface="serif" />
 
                 <TableLayout
@@ -328,8 +322,7 @@
                             android:id="@+id/shehriLblTV"
                             android:gravity="right"
                             android:textColor="#2c3e50"
-                            android:textSize="18dp"
-                            android:textStyle="italic" />
+                            android:textSize="18dp" />
 
                         <TextView
                             android:id="@+id/sh"
@@ -338,8 +331,7 @@
                             android:includeFontPadding="false"
                             android:text=" SH"
                             android:textColor="#2c3e50"
-                            android:textSize="10dp"
-                            android:textStyle="bold|italic" />
+                            android:textSize="10dp" />
                     </TableRow>
                 </TableLayout>
 
@@ -349,8 +341,7 @@
                     android:layout_weight="25"
                     android:gravity="center"
                     android:textColor="#2c3e50"
-                    android:textSize="18sp"
-                    android:textStyle="italic" />
+                    android:textSize="18sp" />
 
                 <TableLayout
                     android:id="@+id/t12"
@@ -369,8 +360,7 @@
                             android:id="@+id/fajrIgamaTV"
                             android:gravity="center"
                             android:textColor="#2c3e50"
-                            android:textSize="20sp"
-                            android:textStyle="bold|italic"
+                            android:textSize="18sp"
                             android:typeface="serif" />
                     </TableRow>
 
@@ -384,8 +374,7 @@
                             android:id="@+id/sunriseTV"
                             android:gravity="right"
                             android:textColor="#2c3e50"
-                            android:textSize="18sp"
-                            android:textStyle="italic" />
+                            android:textSize="18sp" />
 
                         <TextView
                             android:id="@+id/sunriseSign"
@@ -394,8 +383,7 @@
                             android:includeFontPadding="false"
                             android:text=" SR"
                             android:textColor="#2c3e50"
-                            android:textSize="10sp"
-                            android:textStyle="italic" />
+                            android:textSize="10sp" />
                     </TableRow>
                 </TableLayout>
             </TableRow>
@@ -427,8 +415,7 @@
                     android:gravity="left"
                     android:text="  Zohr"
                     android:textColor="#2c3e50"
-                    android:textSize="20sp"
-                    android:textStyle="bold|italic"
+                    android:textSize="18sp"
                     android:typeface="serif" />
 
                 <TextView
@@ -438,7 +425,7 @@
                     android:gravity="center"
                     android:textColor="#2c3e50"
                     android:textSize="18sp"
-                    android:textStyle="italic" />
+                    android:typeface="serif" />
 
                 <TextView
                     android:id="@+id/zhorIgamaTV"
@@ -446,8 +433,7 @@
                     android:layout_weight="25"
                     android:gravity="center"
                     android:textColor="#2c3e50"
-                    android:textSize="20sp"
-                    android:textStyle="bold|italic"
+                    android:textSize="18sp"
                     android:typeface="serif" />
             </TableRow>
         </TableLayout>
@@ -478,17 +464,17 @@
                     android:gravity="left"
                     android:text="  Asr"
                     android:textColor="#2c3e50"
-                    android:textSize="20sp"
-                    android:textStyle="bold|italic"
+                    android:textSize="18sp"
                     android:typeface="serif" />
 
                 <TextView
                     android:id="@+id/asorAzanHanafiTV"
+                    android:layout_width="0sp"
                     android:layout_weight="25"
                     android:gravity="center"
                     android:textColor="#2c3e50"
                     android:textSize="18sp"
-                    android:textStyle="italic" />
+                    android:typeface="serif" />
 
                 <TextView
                     android:id="@+id/asorIgamaTV"
@@ -496,8 +482,7 @@
                     android:layout_weight="25"
                     android:gravity="center"
                     android:textColor="#2c3e50"
-                    android:textSize="20sp"
-                    android:textStyle="bold|italic"
+                    android:textSize="18sp"
                     android:typeface="serif" />
             </TableRow>
         </TableLayout>
@@ -528,8 +513,7 @@
                     android:gravity="left"
                     android:text="  Maghrib"
                     android:textColor="#2c3e50"
-                    android:textSize="20sp"
-                    android:textStyle="bold|italic"
+                    android:textSize="18sp"
                     android:typeface="serif" />
 
                 <TextView
@@ -539,7 +523,7 @@
                     android:gravity="center"
                     android:textColor="#2c3e50"
                     android:textSize="18sp"
-                    android:textStyle="italic" />
+                    android:typeface="serif" />
 
                 <TextView
                     android:id="@+id/magribIgamaTV"
@@ -547,8 +531,7 @@
                     android:layout_weight="25"
                     android:gravity="center"
                     android:textColor="#2c3e50"
-                    android:textSize="20sp"
-                    android:textStyle="bold|italic"
+                    android:textSize="18sp"
                     android:typeface="serif" />
             </TableRow>
         </TableLayout>
@@ -580,7 +563,6 @@
                     android:text="  Isha"
                     android:textColor="#2c3e50"
                     android:textSize="20sp"
-                    android:textStyle="bold|italic"
                     android:typeface="serif" />
 
                 <TextView
@@ -590,7 +572,7 @@
                     android:gravity="center"
                     android:textColor="#2c3e50"
                     android:textSize="18sp"
-                    android:textStyle="italic" />
+                    android:typeface="serif" />
 
                 <TextView
                     android:id="@+id/ishaIgamaTV"
@@ -598,8 +580,7 @@
                     android:layout_weight="25"
                     android:gravity="center"
                     android:textColor="#2c3e50"
-                    android:textSize="20sp"
-                    android:textStyle="bold|italic"
+                    android:textSize="18sp"
                     android:typeface="serif" />
             </TableRow>
         </TableLayout>
@@ -668,7 +649,6 @@
             android:text="Please, Make Duaa For My Parents"
             android:textColor="#2c3e50"
             android:textSize="12sp"
-            android:textStyle="italic"
             android:typeface="serif"></TextView>
     </TableLayout>
 

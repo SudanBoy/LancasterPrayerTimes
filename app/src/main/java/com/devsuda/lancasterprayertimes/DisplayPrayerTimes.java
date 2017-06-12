@@ -86,7 +86,7 @@ public class DisplayPrayerTimes {
     private long nextPrayerIgamaTimeInMs = 0;
     private long nextPrayerAzanTimeInMs = 0;
 
-    private static final String highlghtColor = "#f1c40f";
+    private static final String highlghtColor = "#ffffff";
 
     public DisplayPrayerTimes(MainActivity _mainActivity) {
         this.mainActivity = _mainActivity;
