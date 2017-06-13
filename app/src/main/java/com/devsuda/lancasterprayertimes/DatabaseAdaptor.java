@@ -17,7 +17,7 @@ public class DatabaseAdaptor extends SQLiteOpenHelper {
 
     private final Context context;
 
-    private static final String DATABASE_NAME = "townDB_4";
+    private static final String DATABASE_NAME = "townDB_5";
     private static final int DATABASE_VERSION = 1;
     private static final String DAY = "day";
     private static final String DATE = "date";
@@ -41,7 +41,6 @@ public class DatabaseAdaptor extends SQLiteOpenHelper {
     private Cursor dbCursor;
     private SQLiteDatabase database;
 
-    private DisplayCountdowns displayCountdowns;
     private DateTimeAdaptor dateTimeAdaptor;
     private DisplayPrayerTimes displayPrayerTimes;
 
@@ -52,7 +51,6 @@ public class DatabaseAdaptor extends SQLiteOpenHelper {
                 + "/databases/";
 
         this.dateTimeAdaptor = new DateTimeAdaptor();
-        this.displayCountdowns = new DisplayCountdowns(_mainActivity);
         this.displayPrayerTimes = new DisplayPrayerTimes(_mainActivity);
     }
 

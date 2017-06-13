@@ -57,7 +57,8 @@ public class DisplayPrayerTimes {
     private DateTimeAdaptor dateTimeAdaptor;
     private DisplayCountdowns displayCountdowns;
 
-    private TextView DuaaLabel;
+
+    private TextView displayMsgToUsrTv;
 
     private TextView dateNameTV;
     private TextView gregorianTimeTV;
@@ -123,6 +124,7 @@ public class DisplayPrayerTimes {
         asorAzan_time = new Date(asorAzan_in_ms);
         ishaAzan_time = new Date(ishaAzan_in_ms);
 
+        displayMsgToUsrTv = (TextView) mainActivity.findViewById(R.id.displayMsgToUsrTv);
 
         this.dateNameTV = (TextView) mainActivity.findViewById(R.id.dateNameTV);
         this.gregorianTimeTV = (TextView) mainActivity.findViewById(R.id.gregorianTimeTV);
@@ -275,7 +277,7 @@ public class DisplayPrayerTimes {
     }
 
     private void displayNextDayPrayerTimes(Cursor cursor) {
-        DuaaLabel.setText("(All times are NOW set for tomorrow)");
+        displayMsgToUsrTv.setText("All times are NOW set for tomorrow");
         showTimesOnGui(cursor);
         nextPrayerIgamaTimeInMs = dateTimeAdaptor.convertToMillis(cursor, 1, null);
         fajrBgTl.setBackgroundColor(Color.parseColor(highlghtColor));

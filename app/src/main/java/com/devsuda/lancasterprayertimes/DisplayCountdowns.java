@@ -1,6 +1,7 @@
 package com.devsuda.lancasterprayertimes;
 
 import android.os.CountDownTimer;
+import android.widget.TableRow;
 import android.widget.TextView;
 
 public class DisplayCountdowns {
@@ -24,6 +25,7 @@ public class DisplayCountdowns {
 
         final TextView minOfAzanCdTv = (TextView) mainActivity.findViewById(R.id.minOfAzanCdTv);
         final TextView minOfAzanCdSign = (TextView) mainActivity.findViewById(R.id.minOfAzanCdSign);
+        final TableRow azanCdBg = (TableRow) mainActivity.findViewById(R.id.azanCdBg);
 
         long timeToNextAzan = 0;
         long timeToNextIgamaِ = 0;
@@ -57,17 +59,20 @@ public class DisplayCountdowns {
                             minOfAzanCdTv.setText("Azan is calling");
                         } else {
                             minOfAzanCdTv.setText(minOfAzanCd);
-                            minOfAzanCdSign.setText(" minutes to azan\t");
+                            minOfAzanCdSign.setText(" minutes to Azan\t");
+                            //azanCdBg.setBackgroundColor(Color.parseColor("#dcf2e0a5"));
                         }
 
                     } else {
                         minOfAzanCdSign.setText("Relax, azan not yet called");
+                        //azanCdBg.setBackgroundColor(Color.parseColor("#bdd3e282"));
                     }
                 }
 
                 public void onFinish() {
                     //notiAdaptor.showNotification(azanNotiId);
                     minOfAzanCdTv.setText("Azan has been called ");
+                    //azanCdBg.setBackgroundColor(Color.parseColor("#bdfac5b9"));
                 }
             }.start();
 
@@ -84,9 +89,9 @@ public class DisplayCountdowns {
                 }
 
                 public void onFinish() {
-
-                    notiAdaptor.showNotification(igamaNotiId);
+                    //notiAdaptor.showNotification(igamaNotiId);
                     minOfAzanCdTv.setText("Jamaa started, hurry up!");
+                    //azanCdBg.setBackgroundColor(Color.parseColor("#bdfac5b9"));
                 }
             }.start();
 
@@ -104,16 +109,19 @@ public class DisplayCountdowns {
                         } else {
                             minOfAzanCdTv.setText(minOfMagribCd);
                             minOfAzanCdSign.setText(" minutes to azan\t");
+                            //azanCdBg.setBackgroundColor(Color.parseColor("#dcf2e0a5"));
                         }
 
                     } else {
                         minOfAzanCdSign.setText("Relax, azan not yet called");
+                        //azanCdBg.setBackgroundColor(Color.parseColor("#bdd3e282"));
                     }
                 }
 
                 public void onFinish() {
                     //notiAdaptor.showNotification(igamaNotiId);
                     minOfAzanCdTv.setText("Azan has been called ");
+                    //azanCdBg.setBackgroundColor(Color.parseColor("#bdfac5b9"));
                 }
             }.start();
         }
