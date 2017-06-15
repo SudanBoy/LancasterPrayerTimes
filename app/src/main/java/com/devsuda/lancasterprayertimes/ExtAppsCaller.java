@@ -5,20 +5,29 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.location.LocationManager;
 import android.net.Uri;
+
+import java.util.Locale;
 
 public class ExtAppsCaller {
 
     private static final String LANCS_UNI_APP_URI = "com.devsuda.luprayertimes";
-    private static final String GOOGLE_MAP_APP_URI = "com.devsuda.luprayertimes";
+    private static final String GOOGLE_MAP_APP_URI = "com.google.android.apps.maps";
 
     private Context context;
     private PackageManager packageManager;
     private boolean appInstalled;
     private AlertDialog.Builder alertDialog;
+    private LocationHelper locationAdaptor;
+    double currentLocLat;
+    double currentLocLon;
+    double prayerRoomLat = 54.048243;
+    double prayerRoomLon = -2.8051101;
 
     public ExtAppsCaller(MainActivity _mainActivity) {
         this.context = _mainActivity;
+        locationAdaptor = new LocationHelper(_mainActivity);
     }
 
     public void gotoApp(int appId) {
@@ -35,9 +44,20 @@ public class ExtAppsCaller {
                 break;
             case 2:
                 if (isAppInstalled(GOOGLE_MAP_APP_URI)) {
-                    Intent LaunchIntent = context.getPackageManager()
-                            .getLaunchIntentForPackage("com.google.android.apps.maps");
-                    context.startActivity(LaunchIntent);
+                    currentLocLat = locationAdaptor.getLatitude();
+                    currentLocLon = locationAdaptor.getLongitude();
+
+                    if (isLocationEnabled()) {
+                        String uri = String.format(Locale.ENGLISH,
+                                "http://maps.google.com/maps?saddr=%f,%f(%s)&daddr=%f,%f (%s)",
+                                currentLocLat, currentLocLon, "My current location",
+                                prayerRoomLat, prayerRoomLon, "Prayer Room");
+                        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(uri));
+
+                        intent.setPackage("com.google.android.apps.maps");
+
+                        context.startActivity(intent);
+                    }
                 } else {
                     actionToInstallApp(appId);
                 }
@@ -93,7 +113,7 @@ public class ExtAppsCaller {
                 alertDialog.show();
                 break;
             case 2:
-                String uri = "https://www.google.co.uk/maps/place/54%C2%B002'53.7%22N+2%C2%B048'15.2%22W/@54.048243,-2.8051101,260m/data=!3m2!1e3!4b1!4m5!3m4!1s0x0:0x0!8m2!3d54.048243!4d-2.804207";
+                String uri = "https://www.google.co.uk/maps/place/54%C2%B002'53.7%22N+2%C2%B048'15.2%22W/@54.04825,-2.8045786,19z/data=!4m5!3m4!1s0x0:0x0!8m2!3d54.04825!4d-2.8042222";
                 Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(uri));
                 context.startActivity(intent);
 
@@ -101,6 +121,25 @@ public class ExtAppsCaller {
 
                 break;
         }
+    }
 
+    private boolean isLocationEnabled() {
+        boolean locationEnabled = false;
+        LocationManager locationManager = (LocationManager) context.getSystemService(Context.LOCATION_SERVICE);
+        if (!locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
+            AlertDialog.Builder builder = new AlertDialog.Builder(context);
+            builder.setTitle("GPS Not Found");  // GPS not found
+            builder.setMessage("Want to ernable"); // Want to enable?
+            builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialogInterface, int i) {
+                    context.startActivity(new Intent(android.provider.Settings.ACTION_LOCATION_SOURCE_SETTINGS));
+                }
+            });
+            builder.setNegativeButton("No", null);
+            builder.create().show();
+        } else {
+            locationEnabled = true;
+        }
+        return locationEnabled;
     }
 }
