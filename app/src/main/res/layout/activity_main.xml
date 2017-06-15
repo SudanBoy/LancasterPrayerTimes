@@ -248,7 +248,6 @@
         android:weightSum="6">
 
         <TableRow
-            android:id="@+id/azanCdBg"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -598,7 +597,6 @@
             android:background="#E6ecf0f1"></TextView>
 
         <TableRow
-            android:id="@+id/azanCdBg"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
