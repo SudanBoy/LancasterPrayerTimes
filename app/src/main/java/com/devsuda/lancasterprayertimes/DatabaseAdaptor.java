@@ -17,7 +17,7 @@ public class DatabaseAdaptor extends SQLiteOpenHelper {
 
     private final Context context;
 
-    private static final String DATABASE_NAME = "townDB_5";
+    private static final String DATABASE_NAME = "msjdnoordb";
     private static final int DATABASE_VERSION = 1;
     private static final String DAY = "day";
     private static final String DATE = "date";
